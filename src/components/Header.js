@@ -3,9 +3,11 @@ import movie from "../movie.png";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, removeUser } from "../utils/userSlice";
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -20,30 +22,35 @@ const Header = () => {
     const unsub = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
-        // const { uid, email, displayName } = user;
-        // dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+        const { uid, email } = user;
+        dispatch(addUser({ uid: uid, email: email }));
         navigate("/browse");
       } else {
         // User is signed out
         navigate("/");
-        // dispatch(removeUser());
+        dispatch(removeUser());
       }
     });
     return () => unsub();
   }, []);
+  const userData = useSelector((store) => store.user);
   return (
-    <div>
-      <div className="p-3 px-8 flex justify-between bg-gradient-to-b from-cyan-800">
-        <div className="flex">
+    <div className="sticky top-0 z-20">
+      <div className="p-3 sm:px-8 flex justify-between bg-gray-800 ">
+        <div className="flex items-center">
           <img alt="LOGO" className="w-10" src={movie} />
-          <p className="text-4xl text-gray-800 ml-3 font-bold">Movie App</p>
+          <p className="text-2xl sm:text-4xl text-purple-400 ml-3 ">
+            Movie App
+          </p>
         </div>
-        <button
-          className="p-2 px-4 bg-red-500 rounded-md"
-          onClick={handleSignOut}
-        >
-          Sign Out
-        </button>
+        {userData && (
+          <button
+            className="p-2 px-4 bg-red-500 rounded-md text-slate-200"
+            onClick={handleSignOut}
+          >
+            Sign Out
+          </button>
+        )}
       </div>
     </div>
   );
