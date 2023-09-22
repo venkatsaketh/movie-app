@@ -28,12 +28,10 @@ const Signin = () => {
       createUserWithEmailAndPassword(auth, mail, pwd)
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-
+          // const user = userCredential.user;
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
           setErr(errorMessage);
         });
@@ -41,12 +39,10 @@ const Signin = () => {
       signInWithEmailAndPassword(auth, mail, pwd)
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-
+          // const user = userCredential.user;
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
           setErr(errorMessage);
         });
@@ -90,7 +86,7 @@ const Signin = () => {
           >
             {isSignin
               ? "new to Movie App? signup Now"
-              : "Already Registered sign in now.."}
+              : "Already Registered sign in now..."}
           </p>
         </form>
       </div>

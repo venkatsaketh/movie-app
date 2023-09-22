@@ -45,9 +45,7 @@ const Header = () => {
           onClick={() => navigate("/browse")}
         >
           <img alt="LOGO" className="w-10" src={movie} />
-          <p className="text-2xl sm:text-4xl text-purple-400 ml-3 ">
-            Movie App
-          </p>
+          <p className="text-2xl sm:text-4xl text-sky-400 ml-3 ">Movie App</p>
         </div>
         {userData && (
           <div className="flex justify-between">
