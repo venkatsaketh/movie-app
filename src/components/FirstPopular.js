@@ -9,7 +9,7 @@ const FirstPopular = ({ movie }) => {
         className="w-full h-96 object-cover absolute"
         src={IMG_CDN + movie.backdrop_path}
       />
-      <div className=" relative top-48 sm:top-20 lg:top-32   left-3 w-3/4 p-4 sm:left-11 bg-black rounded-lg bg-opacity-50">
+      <div className=" relative top-48 sm:top-20 lg:top-32 p-4 pl-8 sm:pl-16 bg-black rounded-lg bg-opacity-50">
         <h1 className="text-4xl mb-1 font-bold text-purple-400">
           {movie.original_title +
             " (" +

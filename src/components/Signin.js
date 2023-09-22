@@ -21,7 +21,6 @@ const Signin = () => {
     e.preventDefault();
     const mail = email.current.value;
     const pwd = password.current.value;
-    console.log("sfs");
     const msg = checkSignin(email.current.value, password.current.value);
     setErr(msg);
     if (msg) return;

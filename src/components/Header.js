@@ -5,9 +5,12 @@ import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
+import { useLocation } from "react-router-dom";
+
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -24,7 +27,7 @@ const Header = () => {
         // User is signed in, see docs for a list of available properties
         const { uid, email } = user;
         dispatch(addUser({ uid: uid, email: email }));
-        navigate("/browse");
+        if (location.pathname === "/") navigate("/browse");
       } else {
         // User is signed out
         navigate("/");
@@ -36,20 +39,31 @@ const Header = () => {
   const userData = useSelector((store) => store.user);
   return (
     <div className="sticky top-0 z-20">
-      <div className="p-3 sm:px-8 flex justify-between bg-gray-800 ">
-        <div className="flex items-center">
+      <div className="p-2 sm:px-8 flex justify-between bg-gray-800 ">
+        <div
+          className="flex items-center cursor-pointer sm:w-6/12"
+          onClick={() => navigate("/browse")}
+        >
           <img alt="LOGO" className="w-10" src={movie} />
           <p className="text-2xl sm:text-4xl text-purple-400 ml-3 ">
             Movie App
           </p>
         </div>
         {userData && (
-          <button
-            className="p-2 px-4 bg-red-500 rounded-md text-slate-200"
-            onClick={handleSignOut}
-          >
-            Sign Out
-          </button>
+          <div className="flex justify-between">
+            <button
+              className="p-2 sm:px-4 bg-cyan-800 rounded-md text-slate-200"
+              onClick={() => navigate("/search")}
+            >
+              Search
+            </button>
+            <button
+              className="p-2 sm:px-4 ml-2 bg-red-500 rounded-md text-slate-200"
+              onClick={handleSignOut}
+            >
+              Sign Out
+            </button>
+          </div>
         )}
       </div>
     </div>
