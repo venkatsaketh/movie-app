@@ -23,7 +23,7 @@ const Browse = () => {
             <FirstPopular movie={movies?.popularMovies?.[0]} />
           )}
           <select
-            className="m-7 border border-gray-400 rounded-lg bg-black font-serif text-sky-400 text-2xl p-4"
+            className="m-7 border outline-none border-gray-400 rounded-lg bg-black font-serif text-sky-400 text-2xl p-4"
             onChange={(e) => handleFilter(e)}
           >
             <option value="popular">Popular</option>

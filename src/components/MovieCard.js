@@ -1,10 +1,11 @@
 import React from "react";
 import { IMG_CDN } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
+import No_Picture from "../No_Picture.jpg";
 
 const MovieCard = ({ poster_path, movie }) => {
   const navigate = useNavigate();
-  if (!poster_path) return;
+  // if (!poster_path) return;
   const getDate = (date) => {
     const dd = new Date(date);
     const month = dd.toLocaleString("default", { month: "short" });
@@ -13,13 +14,13 @@ const MovieCard = ({ poster_path, movie }) => {
 
   return (
     <div
-      className="w-52 mr-3 p-3 hover:bg-gray-600 hover:cursor-pointer rounded-md text-white"
+      className="w-52 p-3 hover:bg-gray-600 hover:cursor-pointer rounded-md text-white"
       onClick={() => navigate("/movie/" + movie.id)}
     >
       <img
         alt="Movie Card"
-        className="rounded-lg"
-        src={IMG_CDN + poster_path}
+        className="rounded-lg w-fit h-72"
+        src={poster_path ? IMG_CDN + poster_path : No_Picture}
       />
       <div className="flex mt-2 items-center justify-between">
         <div>
