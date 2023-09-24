@@ -20,10 +20,10 @@ const Browse = () => {
       {movies && (
         <>
           {movies?.popularMovies && (
-            <FirstPopular movie={movies?.popularMovies?.[0]} />
+            <FirstPopular movie={movies?.popularMovies?.[1]} />
           )}
           <select
-            className="m-7 border outline-none border-gray-400 rounded-lg bg-black font-serif text-sky-400 text-2xl p-4"
+            className="m-7 border outline-none border-gray-400 rounded-lg bg-black font-serif text-sky-400 text-xl p-2"
             onChange={(e) => handleFilter(e)}
           >
             <option value="popular">Popular</option>
