@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { options } from "../utils/constants";
 import { addSearchMovies } from "../utils/movieSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,17 +7,29 @@ const Search = () => {
   const searchText = useRef();
   const dispatch = useDispatch();
   const list = useSelector((store) => store.movie.searchedMovies);
-  console.log(list);
+  // console.log(list);
   const handleSearch = async (e) => {
     e.preventDefault();
     const Mname = searchText.current.value;
     let data = await fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${Mname}&include_adult=false&language=en-US&page=1`,
+      `https://api.themoviedb.org/3/search/movie?query=${Mname}&release_date.gte=1990&sort_by=popularity.desc&include_adult=false&language=en-US&page=1`,
       options
     );
     data = await data.json();
     dispatch(addSearchMovies(data.results));
   };
+  // const getGener = async () => {
+  //   let data = await fetch(
+  //     "https://api.themoviedb.org/3/genre/movie/list?language=en-US",
+  //     options
+  //   );
+  //   data = await data.json();
+  //   console.log(data);
+  // };
+  // useEffect(() => {
+  //   getGener();
+  // }, []);
+
   return (
     <div className={"mt-5 bg-black min-h-screen mx-auto"}>
       {/* search bar */}

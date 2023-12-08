@@ -13,7 +13,7 @@ const Movie = () => {
       options
     );
     movieData = await movieData.json();
-    console.log(movieData);
+    // console.log(movieData);
     setData(movieData);
   };
   useEffect(() => {

@@ -7,10 +7,10 @@ import Movie from "./components/Movie";
 
 function App() {
   const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Signin />,
-    },
+    // {
+    //   path: "/",
+    //   element: <Signin />,
+    // },
     {
       path: "/",
       element: (

@@ -52,7 +52,7 @@ const Signin = () => {
   return (
     <div className="bg-gray-600 w-screen h-screen">
       <Header />
-      <div className="bg-gray-800 sm:w-8/12  lg:w-5/12 mx-auto opacity-70 p-7 rounded-xl text-white mt-16">
+      <div className="bg-gray-800 sm:w-8/12  lg:w-5/12 mx-auto opacity-70 p-7 sm:rounded-xl text-white mt-16">
         <p className="font-bold px-4 sm:px-12 text-3xl">
           {isSignin ? "Sign In" : "Sign Up"}
         </p>

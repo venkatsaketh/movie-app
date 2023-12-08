@@ -23,19 +23,20 @@ const Header = () => {
       });
   };
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        const { uid, email } = user;
-        dispatch(addUser({ uid: uid, email: email }));
-        if (location.pathname === "/") navigate("/browse");
-      } else {
-        // User is signed out
-        navigate("/");
-        dispatch(removeUser());
-      }
-    });
-    return () => unsub();
+    // const unsub = onAuthStateChanged(auth, (user) => {
+    //   if (user) {
+    //     // User is signed in, see docs for a list of available properties
+    //     const { uid, email } = user;
+    //     dispatch(addUser({ uid: uid, email: email }));
+    //     if (location.pathname === "/") navigate("/browse");
+    //   } else {
+    //     // User is signed out
+    //     navigate("/");
+    //     dispatch(removeUser());
+    //   }
+    // });
+    navigate("/browse");
+    // return () => unsub();
   }, []);
   const userData = useSelector((store) => store.user);
   return (
@@ -51,7 +52,7 @@ const Header = () => {
           <img alt="LOGO" className="w-10" src={movie} />
           <p className="text-2xl sm:text-4xl text-sky-400 ml-3 ">Movie App</p>
         </div>
-        {userData && (
+        {
           <div className="flex justify-between">
             <button
               className="p-2 sm:px-4 bg-cyan-800 rounded-md text-slate-200"
@@ -67,14 +68,14 @@ const Header = () => {
             >
               {togglePage ? "Home" : "Search"}
             </button>
-            <button
+            {/* <button
               className="p-2 sm:px-4 ml-2 bg-red-500 rounded-md text-slate-200"
               onClick={handleSignOut}
             >
               Sign Out
-            </button>
+            </button> */}
           </div>
-        )}
+        }
       </div>
     </div>
   );
