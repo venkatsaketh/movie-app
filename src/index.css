@@ -43,3 +43,9 @@ body::-webkit-scrollbar{
   body::-webkit-scrollbar {
     display: none;
   } 
+
+  @media (max-width:961px)  { 
+        #Slider {
+          display:none
+        }
+    }

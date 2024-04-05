@@ -33,10 +33,11 @@ const FirstPopular = ({ movies }) => {
         </div>
       </div>
       <div
-        className="absolute right-0 bottom-0 h-full bg-gradient-to-l from-black flex py-auto w-[40px] hover:w-[50px] duration-500"
+        className="absolute right-0 bottom-0 h-full bg-gradient-to-l from-black flex py-auto w-[30px] sm:w-[40px] hover:sm:w-[50px] duration-500"
         onClick={() => {
           setInd((ind + 1) % movies.length);
         }}
+        id="Slider"
       >
         <div className="my-auto px-2">
           <img src={next}></img>
