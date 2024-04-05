@@ -63,22 +63,24 @@ const Movie = () => {
         <p>Budget : ${data.budget / 1000000}M</p>
         <p className="">Revenue : ${Math.floor(data.revenue / 1000000)}M</p>
       </div>
-      <div className="mt-8">
-        <h1 className="text-2xl mb-4 font-bold">Production Companies</h1>
-        <div className="p-6 rounded-md flex-wrap justify-between bg- text-black">
-          {data.production_companies.map((prod) => {
-            return (
-              <div key={prod.id} className=" flex items-center mb-8">
-                <img
-                  className="w-20"
-                  src={prod.logo_path ? IMG_CDN + prod.logo_path : No_Picture}
-                />
-                <span className="ml-10">{prod.name}</span>
-              </div>
-            );
-          })}
+      {data.production_companies.length > 0 && (
+        <div className="mt-8">
+          <h1 className="text-2xl mb-4 font-bold">Production Companies</h1>
+          <div className="p-6 rounded-md flex-wrap justify-between bg- text-black">
+            {data.production_companies.map((prod) => {
+              return (
+                <div key={prod.id} className=" flex items-center mb-8">
+                  <img
+                    className="w-20"
+                    src={prod.logo_path ? IMG_CDN + prod.logo_path : No_Picture}
+                  />
+                  <span className="ml-10">{prod.name}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

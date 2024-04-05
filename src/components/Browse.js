@@ -20,19 +20,27 @@ const Browse = () => {
       {movies && (
         <>
           {movies?.popularMovies && (
-            <FirstPopular movie={movies?.popularMovies?.[1]} />
+            <FirstPopular movies={movies?.popularMovies} />
           )}
-          <select
+          {/* <select
             className="m-7 border outline-none border-gray-400 rounded-lg bg-black font-serif text-sky-400 text-xl p-2"
             onChange={(e) => handleFilter(e)}
           >
             <option value="popular">Popular</option>
             <option value="toprated">Top Rated</option>
             <option value="upcoming">Up Coming</option>
-          </select>
-          {type === "popular" && <MovieList movies={movies.popularMovies} />}
+          </select> */}
+          {/* {type === "popular" && <MovieList movies={movies.popularMovies} />}
           {type === "toprated" && <MovieList movies={movies.TopRated} />}
-          {type === "upcoming" && <MovieList movies={movies.upcoming} />}
+          {type === "upcoming" && <MovieList movies={movies.upcoming} />} */}
+          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-7 mt-3 underline">
+            Top Rated
+          </h2>
+          <MovieList movies={movies.TopRated} />
+          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-7 mt-3 underline">
+            Upcoming
+          </h2>
+          <MovieList movies={movies.upcoming} />
         </>
       )}
     </div>

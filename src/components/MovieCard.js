@@ -22,7 +22,7 @@ const MovieCard = ({ poster_path, movie }) => {
         className="rounded-lg w-fit h-72"
         src={poster_path ? IMG_CDN + poster_path : No_Picture}
       />
-      <div className="flex mt-2 items-center justify-between">
+      {/* <div className="flex mt-2 items-center justify-between">
         <div>
           <p>{movie.original_title}</p>
           <p>{movie.release_date ? getDate(movie.release_date) : "NA"}</p>
@@ -32,7 +32,7 @@ const MovieCard = ({ poster_path, movie }) => {
             ?.toString()
             .slice(0, movie.vote_average.toString().indexOf(".") + 2)}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
