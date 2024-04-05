@@ -14,7 +14,7 @@ const MovieCard = ({ poster_path, movie }) => {
 
   return (
     <div
-      className="w-52 p-3 hover:bg-gray-600 hover:cursor-pointer rounded-md text-white"
+      className="w-52 p-3  hover:border-white hover:border-4 hover:cursor-pointer rounded-md text-white"
       onClick={() => navigate("/movie/" + movie.id)}
     >
       <img
