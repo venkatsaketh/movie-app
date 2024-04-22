@@ -5,7 +5,7 @@ const MovieList = ({ movies }) => {
   return (
     <div className="px-6">
       <div className="flex overflow-x-scroll">
-        <div className="flex">
+        <div className="flex py-10">
           {movies?.map((movie) => (
             <MovieCard
               key={movie.id}

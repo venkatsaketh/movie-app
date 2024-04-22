@@ -41,7 +41,7 @@ const Header = () => {
   const userData = useSelector((store) => store.user);
   return (
     <div className="sticky top-0 z-20">
-      <div className="p-2 sm:px-8 flex justify-between bg-gray-800 ">
+      <div className="p-2 sm:px-8 flex justify-between bg-gray-800 py-3">
         <div
           className="flex items-center cursor-pointer sm:w-6/12"
           onClick={() => {

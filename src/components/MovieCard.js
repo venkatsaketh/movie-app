@@ -6,15 +6,15 @@ import No_Picture from "../No_Picture.jpg";
 const MovieCard = ({ poster_path, movie }) => {
   const navigate = useNavigate();
   // if (!poster_path) return;
-  const getDate = (date) => {
-    const dd = new Date(date);
-    const month = dd.toLocaleString("default", { month: "short" });
-    return month + ", " + date.slice(0, 4);
-  };
+  // const getDate = (date) => {
+  //   const dd = new Date(date);
+  //   const month = dd.toLocaleString("default", { month: "short" });
+  //   return month + ", " + date.slice(0, 4);
+  // };
 
   return (
     <div
-      className="w-52 p-3  hover:border-white hover:border-4 hover:cursor-pointer rounded-md text-white"
+      className="w-52 p-3 transition ease-in-out hover:-translate-y-1 hover:scale-125 hover:cursor-pointer rounded-md text-white"
       onClick={() => navigate("/movie/" + movie.id)}
     >
       <img
