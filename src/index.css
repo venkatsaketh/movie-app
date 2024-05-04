@@ -56,8 +56,14 @@ body::-webkit-scrollbar{
 
 .bg-prev{
   background: linear-gradient(88deg,#0f1014 0.62%,rgba(15,16,20,0) 99.33%);
+  display: none;
 }
 
 .bg-next{
   background: linear-gradient(269.25deg,#0f1014 0.62%,rgba(15,16,20,0) 99.33%);
+  display:none;
+}
+
+.c-list:hover button{
+  display: block;
 }

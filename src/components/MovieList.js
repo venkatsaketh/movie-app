@@ -14,7 +14,7 @@ const MovieList = ({ movies }) => {
   };
 
   return (
-    <div className="mt-4 flex">
+    <div className="mt-4 flex c-list">
       <button
         className="text-white text-2xl translate-x-5 my-3 bg-prev z-20"
         onClick={handleLeft}
