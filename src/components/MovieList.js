@@ -30,6 +30,7 @@ const MovieList = ({ movies }) => {
             key={movie.id}
             movRef={movie_card}
             poster_path={movie.poster_path}
+            back_drop={movie.backdrop_path}
             movie={movie}
           />
         ))}
