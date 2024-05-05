@@ -55,13 +55,19 @@ body::-webkit-scrollbar{
     }
 
 .bg-prev{
-  background: linear-gradient(88deg,#0f1014 0.62%,rgba(15,16,20,0) 99.33%);
+  background: linear-gradient(88deg,#0f1014 20%,rgba(15,16,20,0) 99.33%);
   display: none;
 }
 
 .bg-next{
-  background: linear-gradient(269.25deg,#0f1014 0.62%,rgba(15,16,20,0) 99.33%);
+  background: linear-gradient(269.25deg,#0f1014 20%,rgba(15,16,20,0) 99.33%);
   display:none;
+}
+
+@media only screen and (max-width: 768px) {
+  .c-list:hover button{
+    display: none;
+  }
 }
 
 .c-list:hover button{

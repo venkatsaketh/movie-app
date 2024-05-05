@@ -33,15 +33,15 @@ const Browse = () => {
           {/* {type === "popular" && <MovieList movies={movies.popularMovies} />}
           {type === "toprated" && <MovieList movies={movies.TopRated} />}
           {type === "upcoming" && <MovieList movies={movies.upcoming} />} */}
-          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-7 mt-12 underline">
+          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-4 mt-12 underline">
             Popular
           </h2>
           {movies.popularMovies && <MovieList movies={movies.popularMovies} />}
-          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-7 mt-3 underline">
+          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-4 mt-3 underline">
             Top Rated
           </h2>
           {movies.TopRated && <MovieList movies={movies.TopRated} />}
-          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-7 mt-3 underline">
+          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-4 mt-3 underline">
             Upcoming
           </h2>
           {movies.upcoming && <MovieList movies={movies.upcoming} />}

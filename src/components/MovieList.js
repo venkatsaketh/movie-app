@@ -14,9 +14,9 @@ const MovieList = ({ movies }) => {
   };
 
   return (
-    <div className="mt-4 flex c-list">
+    <div className="mt-4 ml-3 flex c-list">
       <button
-        className="text-white text-2xl translate-x-5 my-3 bg-prev z-20"
+        className="text-white text-2xl translate-x-5 my-3 bg-prev z-10"
         onClick={handleLeft}
       >
         <PiCaretLeftBold className="" />
@@ -36,7 +36,7 @@ const MovieList = ({ movies }) => {
         ))}
       </div>
       <button
-        className="text-white text-2xl -translate-x-5 my-3 bg-next z-20"
+        className="text-white text-2xl -translate-x-5 my-3 bg-next z-10"
         onClick={handleRight}
       >
         <PiCaretRightBold className="" />

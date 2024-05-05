@@ -15,7 +15,7 @@ const MovieCard = ({ poster_path, back_drop, movie, movRef }) => {
   return (
     <div
       ref={movRef}
-      className="w-52 p-1 transition md:p-3 duration-500 flex-grow-0 flex-shrink-0 ease-in-out hover:cursor-pointer rounded-md text-white hover:-translate-y-3 first-letter:hover:scale-100"
+      className="w-52 p-1 transition lg:p-3 duration-500 flex-grow-0 flex-shrink-0 ease-in-out hover:cursor-pointer rounded-md text-white hover:-translate-y-3 first-letter:hover:scale-100"
       onClick={() => navigate("/movie/" + movie.id)}
     >
       <img
