@@ -49,6 +49,7 @@ const Search = () => {
           <MovieCard
             key={movie.id}
             poster_path={movie.poster_path}
+            back_drop={movie.backdrop_path}
             movie={movie}
           />
         ))}
