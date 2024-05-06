@@ -16,7 +16,7 @@ const Browse = () => {
   //   setType(e.target.value);
   // };
   return (
-    <div className="bg-black h-fit pb-8">
+    <div className=" h-fit pb-8">
       {movies && (
         <>
           {movies?.popularMovies && (
@@ -33,7 +33,7 @@ const Browse = () => {
           {/* {type === "popular" && <MovieList movies={movies.popularMovies} />}
           {type === "toprated" && <MovieList movies={movies.TopRated} />}
           {type === "upcoming" && <MovieList movies={movies.upcoming} />} */}
-          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-4 mt-12 underline">
+          <h2 class="text-white font-bold text-2xl p-2 pb-0 ml-4 mt-5 underline">
             Popular
           </h2>
           {movies.popularMovies && <MovieList movies={movies.popularMovies} />}

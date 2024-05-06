@@ -31,7 +31,7 @@ const Search = () => {
   // }, []);
 
   return (
-    <div className={"mt-5 bg-black min-h-screen mx-auto"}>
+    <div className={"mt-5 min-h-screen mx-auto"}>
       {/* search bar */}
       <form className="flex p-3 mx-auto max-w-7xl" onSubmit={handleSearch}>
         <input

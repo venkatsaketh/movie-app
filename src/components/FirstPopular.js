@@ -1,6 +1,7 @@
 import React from "react";
 import { IMG_CDN } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
+import No_Picture from "../No_Picture.jpg";
 
 const FirstPopular = ({ movie }) => {
   const navigate = useNavigate();
@@ -9,12 +10,18 @@ const FirstPopular = ({ movie }) => {
       <div className="text-white relative">
         <img
           alt="Backdrop Pic"
-          className="w-full h-[500px] sm:h-[700px] object-fill"
-          src={IMG_CDN + movie.backdrop_path}
+          className="w-full h-[500px] sm:h-[700px] object-fill hidden min-[426px]:inline"
+          src={movie.backdrop_path ? IMG_CDN + movie.backdrop_path : No_Picture}
         />
-        <div className="absolute w-full bottom-0 left-0 sm:px-12 px-5 bg-gradient-to-t from-black via-gray">
+        <img
+          alt="Movie Card"
+          className="w-full h-[500px] sm:h-[700px] object-fill min-[426px]:hidden"
+          onClick={() => navigate("/movie/" + movie.id)}
+          src={movie.poster_path ? IMG_CDN + movie.poster_path : No_Picture}
+        />
+        <div className="absolute w-full bottom-0 left-0 pb-6 sm:px-12 px-5 bg-gradient-to-t from-black ">
           <h1
-            className="sm:text-4xl text-3xl mb-1 font-bold text-sky-400 cursor-pointer hover:underline"
+            className=" min-[426px]:inline hidden sm:text-4xl text-2xl mb-1 font-bold text-sky-400 cursor-pointer hover:underline"
             onClick={() => navigate("/movie/" + movie.id)}
           >
             {movie.original_title +

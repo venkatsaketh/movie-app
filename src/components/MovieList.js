@@ -8,6 +8,7 @@ const MovieList = ({ movies }) => {
   const carousel_ele = useRef(null);
   const handleLeft = () => {
     carousel_ele.current.scrollLeft -= 2 * movie_card.current.offsetWidth;
+    console.log(movie_card.current.offsetWidth);
   };
   const handleRight = () => {
     carousel_ele.current.scrollLeft += 2 * movie_card.current.offsetWidth;
@@ -16,7 +17,7 @@ const MovieList = ({ movies }) => {
   return (
     <div className="mt-4 ml-3 flex c-list">
       <button
-        className="text-white text-2xl translate-x-5 my-3 bg-prev z-10"
+        className="text-white text-2xl translate-x-5 mt-4 mb-1 bg-prev z-10"
         onClick={handleLeft}
       >
         <PiCaretLeftBold className="" />
@@ -36,7 +37,7 @@ const MovieList = ({ movies }) => {
         ))}
       </div>
       <button
-        className="text-white text-2xl -translate-x-5 my-3 bg-next z-10"
+        className="text-white text-2xl -translate-x-5 mt-4 mb-1 bg-next z-10"
         onClick={handleRight}
       >
         <PiCaretRightBold className="" />

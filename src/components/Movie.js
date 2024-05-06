@@ -25,7 +25,7 @@ const Movie = () => {
   };
   if (!data) return null;
   return (
-    <div className="p-6 md:p-11 pb-5 bg-white text-black">
+    <div className="p-6 md:p-11 pb-5 text-[#e1e7ef]">
       <div className="lg:flex flex-wrap justify-between items-center">
         <img
           className=" lg:w-6/12 lg:h-96 rounded-lg object-cover"
@@ -65,13 +65,16 @@ const Movie = () => {
       </div>
       {data.production_companies.length > 0 && (
         <div className="mt-8">
-          <h1 className="text-2xl mb-4 font-bold">Production Companies</h1>
-          <div className="p-6 rounded-md flex-wrap justify-between bg- text-black">
+          <h1 className="text-2xl mb-4 font-bold underline">
+            Production Companies
+          </h1>
+          <div className="p-6 rounded-md flex-wrap justify-between  bg-gray-600 text-[#e1e7ef]">
             {data.production_companies.map((prod) => {
               return (
                 <div key={prod.id} className=" flex items-center mb-8">
                   <img
                     className="w-20"
+                    alt="logo"
                     src={prod.logo_path ? IMG_CDN + prod.logo_path : No_Picture}
                   />
                   <span className="ml-10">{prod.name}</span>

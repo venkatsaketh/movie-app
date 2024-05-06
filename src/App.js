@@ -14,7 +14,7 @@ function App() {
     {
       path: "/",
       element: (
-        <div className="bg-black">
+        <div>
           <Header />
           <Outlet />
         </div>

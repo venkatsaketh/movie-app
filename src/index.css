@@ -17,6 +17,9 @@
     }
   }
 
+body{
+  background-color: #0f172a;
+}
 body::-webkit-scrollbar{
   display: none;
 }
@@ -64,12 +67,12 @@ body::-webkit-scrollbar{
   display:none;
 }
 
-@media only screen and (max-width: 768px) {
-  .c-list:hover button{
-    display: none;
-  }
-}
 
 .c-list:hover button{
   display: block;
+}
+@media only screen and (max-width: 1024px) {
+  .c-list:hover button{
+    display: none;
+  }
 }
