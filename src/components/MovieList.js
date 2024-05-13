@@ -15,12 +15,12 @@ const MovieList = ({ movies }) => {
   };
 
   return (
-    <div className="mt-4 ml-3 flex c-list">
+    <div className="mt-4 ml-3 mr-3 flex c-list relative">
       <button
-        className="text-white text-2xl translate-x-5 mt-4 mb-1 bg-prev z-10"
+        className="text-white text-3xl mb-1 bg-prev bg-black opacity-70 z-10 w-10 pr-1"
         onClick={handleLeft}
       >
-        <PiCaretLeftBold className="" />
+        <PiCaretLeftBold />
       </button>
       <div
         className="flex overflow-x-scroll carousel scroll-smooth"
@@ -37,10 +37,10 @@ const MovieList = ({ movies }) => {
         ))}
       </div>
       <button
-        className="text-white text-2xl -translate-x-5 mt-4 mb-1 bg-next z-10"
+        className="text-white text-3xl  my-1 bg-next bg-black opacity-70 w-10 z-10 pl-1"
         onClick={handleRight}
       >
-        <PiCaretRightBold className="" />
+        <PiCaretRightBold />
       </button>
     </div>
   );
