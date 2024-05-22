@@ -58,7 +58,8 @@ body::-webkit-scrollbar{
     }
 
 .bg-prev{
-  /* background: linear-gradient(88deg,#0f1014 20%,rgba(15,16,20,0) 99.33%); */
+  background: linear-gradient(88deg,#0f1014 0.6%,rgba(15,16,20,0) 99.33%);
+  color:white;
   display: none;
   position: absolute;
   left: 0px;
@@ -67,7 +68,8 @@ body::-webkit-scrollbar{
 }
 
 .bg-next{
-  /* background: linear-gradient(269.25deg,#0f1014 20%,rgba(15,16,20,0) 99.33%); */
+  background: linear-gradient(269.25deg,#0f1014 0.6%,rgba(15,16,20,0) 99.33%);
+  color:white;
   display: none;
   position: absolute;
   right: 0px;
